@@ -7,13 +7,8 @@ import i18n from "i18next";
 import {
   FooterSection,
   Title,
-  NavLink,
-  Extra,
-  LogoContainer,
   Para,
   Large,
-  Chat,
-  Empty,
   FooterContainer,
   Language,
   Label,
@@ -46,121 +41,68 @@ const Footer = ({ t }: { t: TFunction }) => {
   };
 
   return (
-    <>
-      <FooterSection>
-        <Container>
-          <Row justify="space-between">
-            <Col lg={10} md={10} sm={12} xs={12}>
-              <Language>{t("Contact")}</Language>
-              <Large to="/">{t("Tell us everything")}</Large>
-              <Para>
-                {t(`Do you have any question? Feel free to reach out.`)}
-              </Para>
-              <a href="mailto:l.qqbadze@gmail.com">
-                <Chat>{t(`Let's Chat`)}</Chat>
-              </a>
-            </Col>
-            <Col lg={8} md={8} sm={12} xs={12}>
-              <Title>{t("Policy")}</Title>
-              <Large to="/">{t("Application Security")}</Large>
-              <Large to="/">{t("Software Principles")}</Large>
-            </Col>
-            <Col lg={6} md={6} sm={12} xs={12}>
-              <Empty />
-              <Large to="/">{t("Support Center")}</Large>
-              <Large to="/">{t("Customer Support")}</Large>
-            </Col>
-          </Row>
-          <Row justify="space-between">
-            <Col lg={10} md={10} sm={12} xs={12}>
-              <Empty />
-              <Language>{t("Address")}</Language>
-              <Para>Rancho Santa Margarita</Para>
-              <Para>2131 Elk Street</Para>
-              <Para>California</Para>
-            </Col>
-            <Col lg={8} md={8} sm={12} xs={12}>
-              <Title>{t("Company")}</Title>
-              <Large to="/">{t("About")}</Large>
-              <Large to="/">{t("Blog")}</Large>
-              <Large to="/">{t("Press")}</Large>
-              <Large to="/">{t("Careers & Culture")}</Large>
-            </Col>
-            <Col lg={6} md={6} sm={12} xs={12}>
-              <Label htmlFor="select-lang">{t("Language")}</Label>
-              <LanguageSwitchContainer>
-                <LanguageSwitch onClick={() => handleChange("en")}>
-                  <SvgIcon
-                    src="united-states.svg"
-                    aria-label="homepage"
-                    width="30px"
-                    height="30px"
-                  />
-                </LanguageSwitch>
-                <LanguageSwitch onClick={() => handleChange("es")}>
-                  <SvgIcon
-                    src="spain.svg"
-                    aria-label="homepage"
-                    width="30px"
-                    height="30px"
-                  />
-                </LanguageSwitch>
-              </LanguageSwitchContainer>
-            </Col>
-          </Row>
-        </Container>
-      </FooterSection>
-      <Extra>
-        <Container border={true}>
-          <Row
-            justify="space-between"
-            align="middle"
-            style={{ paddingTop: "3rem" }}
-          >
-            <NavLink to="/">
-              <LogoContainer>
+    <FooterSection>
+      <Container>
+        <Row justify="space-between">
+          <Col lg={6} md={12} sm={12} xs={24}>
+            <Language>{t("Contact")}</Language>
+            <Para>{t("+381 21 6362 712")}</Para>
+            <Para>{t("+381 69 300 7879")}</Para>
+            <br />
+            <Para>
+              {t(`Do you have any question? Feel free to reach out.`)}
+            </Para>
+          </Col>
+          <Col lg={6} md={12} sm={12} xs={24}>
+            <Title>{t("Company")}</Title>
+            <Large to="/">{t("About")}</Large>
+            <Large to="/">{t("Blog")}</Large>
+          </Col>
+          <Col lg={6} md={12} sm={12} xs={24}>
+            <Language>{t("Address")}</Language>
+            <Para>Bulevar Evrope 28A</Para>
+            <Para>21000 Novi Sad</Para>
+            <Para>Republika Srbija</Para>
+          </Col>
+          <Col lg={6} md={12} sm={12} xs={24}>
+            <Label htmlFor="select-lang">{t("Language")}</Label>
+            <LanguageSwitchContainer>
+              <LanguageSwitch onClick={() => handleChange("en")}>
                 <SvgIcon
-                  src="logo.svg"
+                  src="united-kingdom.svg"
                   aria-label="homepage"
-                  width="101px"
-                  height="64px"
+                  width="30px"
+                  height="30px"
                 />
-              </LogoContainer>
-            </NavLink>
+              </LanguageSwitch>
+              <LanguageSwitch onClick={() => handleChange("sr")}>
+                <SvgIcon
+                  src="serbia.svg"
+                  aria-label="homepage"
+                  width="30px"
+                  height="30px"
+                />
+              </LanguageSwitch>
+            </LanguageSwitchContainer>
+            <br />
+            <Label>{t("Follow Us")}</Label>
             <FooterContainer>
               <SocialLink
-                href="https://github.com/Adrinlol/create-react-app-adrinlol"
-                src="github.svg"
+                href="https://www.instagram.com/rbmont.line/"
+                src="instagram-white-icon.webp"
               />
-              <SocialLink
-                href="https://twitter.com/Adrinlolx"
-                src="twitter.svg"
-              />
-              <SocialLink
-                href="https://www.linkedin.com/in/lasha-kakabadze/"
-                src="linkedin.svg"
-              />
-              <SocialLink
-                href="https://medium.com/@lashakakabadze/"
-                src="medium.svg"
-              />
-              <a
-                href="https://ko-fi.com/Y8Y7H8BNJ"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  height="36"
-                  style={{ border: 0, height: 36 }}
-                  src="https://storage.ko-fi.com/cdn/kofi3.png?v=3"
-                  alt="Buy Me a Coffee at ko-fi.com"
-                />
-              </a>
             </FooterContainer>
-          </Row>
-        </Container>
-      </Extra>
-    </>
+          </Col>
+        </Row>
+        <Row
+          justify="center"
+          align="middle"
+          style={{ paddingTop: "3rem", marginTop: "2rem", borderTop: "1px solid rgba(255, 255, 255, 0.2)" }}
+        >
+          <Para>© {new Date().getFullYear()} RB Mont Line. {t("All rights reserved")}.</Para>
+        </Row>
+      </Container>
+    </FooterSection>
   );
 };
 

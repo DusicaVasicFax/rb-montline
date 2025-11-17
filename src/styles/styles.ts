@@ -32,7 +32,7 @@ export const Styles = createGlobalStyle`
     }
 
     a:hover {
-        color: #18216d;
+        color: #C8102E;
     }
 
     input,
@@ -40,54 +40,104 @@ export const Styles = createGlobalStyle`
         border-radius: 4px;
         border: 0;
         background: rgb(241, 242, 243);
-        transition: all 0.3s ease-in-out;  
+        transition: all 0.3s ease-in-out;
         outline: none;
-        width: 100%;  
+        width: 100%;
         padding: 1rem 1.25rem;
 
         :focus-within {
             background: none;
-            box-shadow: #2e186a 0px 0px 0px 1px;
+            box-shadow: #C8102E 0px 0px 0px 1px;
         }
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    h1 {
         font-family: 'Motiva Sans Bold', serif;
-        color: #18216d;
-        font-size: 56px;
-        line-height: 1.18;
+        color: #C8102E;
+        font-size: 48px;
+        line-height: 1.3;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.5px;
 
         @media only screen and (max-width: 890px) {
-          font-size: 47px;
+          font-size: 40px;
         }
-      
+
         @media only screen and (max-width: 414px) {
           font-size: 32px;
         }
     }
 
-    p {
-        color: #18216d;
-        font-size: 21px;        
-        line-height: 1.41;
+    h2 {
+        font-family: 'Motiva Sans Bold', serif;
+        color: #C8102E;
+        font-size: 36px;
+        line-height: 1.4;
+        font-weight: 700;
+        margin-bottom: 1.25rem;
+        letter-spacing: -0.3px;
+
+        @media only screen and (max-width: 890px) {
+          font-size: 32px;
+        }
+
+        @media only screen and (max-width: 414px) {
+          font-size: 26px;
+        }
     }
 
-    h1 {
+    h3 {
+        font-family: 'Motiva Sans Bold', serif;
+        color: #C8102E;
+        font-size: 28px;
+        line-height: 1.4;
+        font-weight: 700;
+        margin-bottom: 1rem;
+
+        @media only screen and (max-width: 890px) {
+          font-size: 24px;
+        }
+
+        @media only screen and (max-width: 414px) {
+          font-size: 22px;
+        }
+    }
+
+    h4,
+    h5,
+    h6 {
+        font-family: 'Motiva Sans Bold', serif;
+        color: #C8102E;
+        font-size: 22px;
+        line-height: 1.5;
         font-weight: 600;
+        margin-bottom: 0.75rem;
+
+        @media only screen and (max-width: 890px) {
+          font-size: 20px;
+        }
+
+        @media only screen and (max-width: 414px) {
+          font-size: 18px;
+        }
+    }
+
+    p {
+        color: #333333;
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+        font-weight: 400;
     }
 
     a {
         text-decoration: none;
         outline: none;
-        color: #2E186A;
+        color: #C8102E;
 
         :hover {
-            color: #2e186a;
+            color: #A00E26;
         }
     }
     

@@ -34,12 +34,11 @@ const ContentBlock = ({
   };
 
   return (
-    <ContentSection>
+    <ContentSection id={id}>
       <Fade direction={direction} triggerOnce>
         <StyledRow
           justify="space-between"
           align="middle"
-          id={id}
           direction={direction}
         >
           <Col lg={11} md={11} sm={12} xs={24}>

@@ -1,17 +1,34 @@
 import { Row } from "antd";
 import styled from "styled-components";
 
-export const ContentSection = styled("section")`
+export const ContentSection = styled("section")<{ id?: string }>`
   position: relative;
-  padding: 10rem 0 8rem;
+  padding: 8rem 3rem;
+  background: ${(props) =>
+    props.id === "about" ? "#ffffff" :
+    props.id === "mission" ? "#f8f9fa" :
+    props.id === "product" ? "#ffffff" : "#ffffff"};
+  border-bottom: ${(props) =>
+    props.id === "product" ? "none" : "1px solid #e9ecef"};
+  margin-bottom: ${(props) =>
+    props.id === "about" || props.id === "mission" ? "3rem" : "0"};
 
   @media only screen and (max-width: 1024px) {
-    padding: 4rem 0 4rem;
+    padding: 5rem 2rem;
+    margin-bottom: ${(props) =>
+      props.id === "about" || props.id === "mission" ? "2rem" : "0"};
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: 4rem 1.5rem;
+    margin-bottom: ${(props) =>
+      props.id === "about" || props.id === "mission" ? "1.5rem" : "0"};
   }
 `;
 
 export const Content = styled("p")`
-  margin: 1.5rem 0 2rem 0;
+  margin: 1.5rem 0 2.5rem 0;
+  max-width: 600px;
 `;
 
 export const StyledRow = styled(Row)`
@@ -21,10 +38,11 @@ export const StyledRow = styled(Row)`
 
 export const ContentWrapper = styled("div")`
   position: relative;
-  max-width: 540px;
+  max-width: 600px;
+  padding: 2rem 1.5rem;
 
   @media only screen and (max-width: 575px) {
-    padding-top: 4rem;
+    padding: 3rem 1rem 2rem;
   }
 `;
 
@@ -39,7 +57,7 @@ export const MinTitle = styled("h6")`
   line-height: 1rem;
   padding: 0.5rem 0;
   text-transform: uppercase;
-  color: #000;
+  color: #C8102E;
   font-family: "Motiva Sans Light", sans-serif;
 `;
 

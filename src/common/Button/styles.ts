@@ -1,25 +1,29 @@
 import styled from "styled-components";
 
 export const StyledButton = styled("button")<{ color?: string }>`
-  background: ${(p) => p.color || "#2e186a"};
-  color: ${(p) => (p.color ? "#2E186A" : "#fff")};
-  font-size: 1rem;
-  font-weight: 700;
+  background: ${(p) => p.color || "#C8102E"};
+  color: ${(p) => (p.color ? "#C8102E" : "#fff")};
+  font-size: 15px;
+  font-weight: 600;
   width: 100%;
-  border: 1px solid #edf3f5;
-  border-radius: 4px;
-  padding: 13px 0;
+  border: 2px solid ${(p) => p.color || "#C8102E"};
+  border-radius: 2px;
+  padding: 14px 32px;
   cursor: pointer;
   margin-top: 0.625rem;
-  max-width: 180px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 16px 30px rgb(23 31 114 / 20%);
+  max-width: 200px;
+  transition: all 0.25s ease-in-out;
+  box-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 
   &:hover,
   &:active,
   &:focus {
-    color: #fff;
-    border: 1px solid rgb(255, 130, 92);
-    background-color: rgb(255, 130, 92);
+    color: #C8102E;
+    border: 2px solid #C8102E;
+    background-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(200, 16, 46, 0.15);
   }
 `;
