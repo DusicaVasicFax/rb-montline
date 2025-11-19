@@ -34,53 +34,47 @@ const About = ({ t }: AboutProps) => {
       </HeroSection>
 
       <ContentSection $variant="first">
-        <Container>
-          <h2>{t("Our Mission")}</h2>
-          <p>
-            {t("Our mission is to deliver excellence in everything we do, combining innovation with reliability to meet our clients' needs.")}
-          </p>
-        </Container>
+        <h2>{t("Our Mission")}</h2>
+        <p>
+          {t("Our mission is to deliver excellence in everything we do, combining innovation with reliability to meet our clients' needs.")}
+        </p>
       </ContentSection>
 
       <ContentSection $variant="second">
-        <Container>
-          <h2>{t("What We Offer")}</h2>
-          <InfoGrid>
-            <InfoCard>
-              <CardTitle>{t("Quality")}</CardTitle>
-              <CardDescription>
-                {t("We maintain the highest standards in all our services and products.")}
-              </CardDescription>
-            </InfoCard>
-            <InfoCard>
-              <CardTitle>{t("Experience")}</CardTitle>
-              <CardDescription>
-                {t("Years of expertise in delivering professional solutions to our clients.")}
-              </CardDescription>
-            </InfoCard>
-            <InfoCard>
-              <CardTitle>{t("Innovation")}</CardTitle>
-              <CardDescription>
-                {t("We constantly evolve and adapt to bring you the latest technologies.")}
-              </CardDescription>
-            </InfoCard>
-            <InfoCard>
-              <CardTitle>{t("Support")}</CardTitle>
-              <CardDescription>
-                {t("Dedicated customer support available to assist you at every step.")}
-              </CardDescription>
-            </InfoCard>
-          </InfoGrid>
-        </Container>
+        <h2>{t("What We Offer")}</h2>
+        <InfoGrid>
+          <InfoCard>
+            <CardTitle>{t("Quality")}</CardTitle>
+            <CardDescription>
+              {t("We maintain the highest standards in all our services and products.")}
+            </CardDescription>
+          </InfoCard>
+          <InfoCard>
+            <CardTitle>{t("Experience")}</CardTitle>
+            <CardDescription>
+              {t("Years of expertise in delivering professional solutions to our clients.")}
+            </CardDescription>
+          </InfoCard>
+          <InfoCard>
+            <CardTitle>{t("Innovation")}</CardTitle>
+            <CardDescription>
+              {t("We constantly evolve and adapt to bring you the latest technologies.")}
+            </CardDescription>
+          </InfoCard>
+          <InfoCard>
+            <CardTitle>{t("Support")}</CardTitle>
+            <CardDescription>
+              {t("Dedicated customer support available to assist you at every step.")}
+            </CardDescription>
+          </InfoCard>
+        </InfoGrid>
       </ContentSection>
 
       <ContentSection $variant="third">
-        <Container>
-          <h2>{t("Our Values")}</h2>
-          <p>
-            {t("We believe in transparency, integrity, and building long-term relationships with our clients. Our team is committed to excellence and continuous improvement.")}
-          </p>
-        </Container>
+        <h2>{t("Our Values")}</h2>
+        <p>
+          {t("We believe in transparency, integrity, and building long-term relationships with our clients. Our team is committed to excellence and continuous improvement.")}
+        </p>
       </ContentSection>
     </AboutSection>
   );

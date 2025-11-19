@@ -38,7 +38,8 @@ export const HeroSection = styled("section")`
   }
 `;
 
-export const ContentSection = styled("section")<{ $variant?: 'first' | 'second' }>`
+export const ContentSection = styled("section")<{ $variant?: 'first' | 'second' | 'third' }>`
+  position: relative;
   padding: 8rem 3rem;
   background: ${props => props.$variant === 'second' ? 'rgba(248, 249, 250, 0.95)' : 'rgba(255, 255, 255, 0.95)'};
   border-bottom: 1px solid rgba(233, 236, 239, 0.5);
@@ -119,6 +120,9 @@ export const ServicesGrid = styled("div")`
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2.5rem;
   margin-top: 3rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 
   @media only screen and (max-width: 768px) {
     grid-template-columns: 1fr;

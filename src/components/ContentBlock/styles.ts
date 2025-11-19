@@ -12,6 +12,7 @@ export const ContentSection = styled("section")<{ id?: string }>`
     props.id === "product" ? "none" : "1px solid #e9ecef"};
   margin-bottom: ${(props) =>
     props.id === "about" || props.id === "mission" ? "3rem" : "0"};
+  opacity: 0.9;
 
   @media only screen and (max-width: 1024px) {
     padding: 5rem 2rem;
