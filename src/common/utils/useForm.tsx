@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { notification } from "antd";
+import emailjs from "@emailjs/browser";
 
 interface IValues {
   name: string;
@@ -28,36 +29,44 @@ export const useForm = (validate: { (values: IValues): IValues }) => {
     const errors = validate(values);
     setFormState((prevState) => ({ ...prevState, errors }));
 
-    const url = ""; // Fill in your API URL here
-
     try {
       if (Object.values(errors).every((error) => error === "")) {
-        const response = await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(values),
-        });
+        // EmailJS configuration
+        const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID || "";
+        const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "";
+        const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || "";
 
-        if (!response.ok) {
+        if (!serviceId || !templateId || !publicKey) {
           notification["error"]({
-            message: "Error",
+            message: "Configuration Error",
             description:
-              "There was an error sending your message, please try again later.",
+              "Email service is not properly configured. Please contact the administrator.",
           });
-        } else {
-          event.target.reset();
-          setFormState(() => ({
-            values: { ...initialValues },
-            errors: { ...initialValues },
-          }));
-
-          notification["success"]({
-            message: "Success",
-            description: "Your message has been sent!",
-          });
+          return;
         }
+
+        // Send email using EmailJS
+        await emailjs.send(
+          serviceId,
+          templateId,
+          {
+            name: values.name,
+            email: values.email,
+            message: values.message,
+          },
+          publicKey
+        );
+
+        event.target.reset();
+        setFormState(() => ({
+          values: { ...initialValues },
+          errors: { ...initialValues },
+        }));
+
+        notification["success"]({
+          message: "Success",
+          description: "Your message has been sent!",
+        });
       }
     } catch (error) {
       notification["error"]({
