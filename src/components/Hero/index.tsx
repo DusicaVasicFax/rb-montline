@@ -1,6 +1,7 @@
 import { Row, Col } from "antd";
 import { Fade } from "react-awesome-reveal";
 import { withTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 import { Button } from "../../common/Button";
 import {
   HeroSection,
@@ -17,18 +18,30 @@ interface HeroProps {
   button?: Array<{
     color?: string;
     title: string;
+    action?: string;
+    target?: string;
   }>;
   t: any;
   id?: string;
 }
 
 const Hero = ({ title, content, button, t, id }: HeroProps) => {
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
+  const history = useHistory();
+
+  const scrollTo = (elementId: string) => {
+    const element = document.getElementById(elementId) as HTMLDivElement;
     if (element) {
       element.scrollIntoView({
         behavior: "smooth",
       });
+    }
+  };
+
+  const handleButtonClick = (item: { action?: string; target?: string }) => {
+    if (item.action === "navigate" && item.target) {
+      history.push(item.target);
+    } else if (item.action === "scroll" && item.target) {
+      scrollTo(item.target);
     }
   };
 
@@ -48,14 +61,16 @@ const Hero = ({ title, content, button, t, id }: HeroProps) => {
                       item: {
                         color?: string;
                         title: string;
+                        action?: string;
+                        target?: string;
                       },
-                      id: number
+                      idx: number
                     ) => {
                       return (
                         <Button
-                          key={id}
+                          key={idx}
                           color={item.color}
-                          onClick={() => scrollTo("about")}
+                          onClick={() => handleButtonClick(item)}
                         >
                           {t(item.title)}
                         </Button>

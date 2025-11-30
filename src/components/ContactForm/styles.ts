@@ -4,8 +4,8 @@ export const ContactContainer = styled("div")`
   padding: 8rem 3rem;
   background: #ffffff;
   overflow: 'hidden';
-  border-top: 3px solid #C8102E;
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+  opacity: 0.9;
 
   @media only screen and (max-width: 1024px) {
     padding: 5rem 2rem;

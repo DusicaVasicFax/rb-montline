@@ -86,6 +86,13 @@ export const CustomNavLinkSmall = styled(NavLink)<{ $isHomePage?: boolean }>`
     margin: 1.25rem 2rem;
     font-size: 16px;
   }
+
+  @media only screen and (max-width: 890px) {
+    .ant-drawer & {
+      color: #333333;
+      text-shadow: none;
+    }
+  }
 `;
 
 export const Label = styled("span")`

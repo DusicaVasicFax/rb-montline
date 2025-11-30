@@ -1,13 +1,17 @@
 {
-  "title": "Landing page template for developers & startups",
-  "text": "Beautifully designed templates using React.js, ant design and styled-components! Save weeks of time and build your landing page in minutes.",
+  "title": "Reliable partner for building optical infrastructure",
+  "text": "For over two decades, we have been building stable, modern, and secure networks that connect people and businesses.",
   "button": [
     {
-      "title": "Explore"
+      "title": "Explore",
+      "action": "navigate",
+      "target": "/services"
     },
     {
-      "title": "Learn more",
-      "color": "#fff"
+      "title": "Contact",
+      "color": "#fff",
+      "action": "scroll",
+      "target": "contact"
     }
   ]
 }

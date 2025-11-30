@@ -41,7 +41,10 @@ export const HeroSection = styled("section")`
 export const ContentSection = styled("section")<{ $variant?: 'first' | 'second' | 'third' }>`
   position: relative;
   padding: 8rem 3rem;
-  background: ${props => props.$variant === 'second' ? 'rgba(248, 249, 250, 0.95)' : 'rgba(255, 255, 255, 0.95)'};
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  background: ${props => props.$variant === 'second' ? 'rgba(248, 249, 250, 0.9)' : 'rgba(255, 255, 255, 0.9)'};
   border-bottom: 1px solid rgba(233, 236, 239, 0.5);
   margin-bottom: 3rem;
   backdrop-filter: blur(5px);

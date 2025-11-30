@@ -25,7 +25,6 @@ const Home = () => {
           direction="left"
           title={AboutContent.title}
           content={AboutContent.text}
-          section={AboutContent.section}
           icon="graphs.svg"
           id="about"
         />

@@ -20,10 +20,9 @@ export const StyledButton = styled("button")<{ color?: string }>`
   &:hover,
   &:active,
   &:focus {
-    color: #C8102E;
-    border: 2px solid #C8102E;
-    background-color: transparent;
+    color: ${(p) => (p.color ? "#C8102E" : "#fff")};
+    border: 2px solid ${(p) => p.color || "#C8102E"};
+    background: ${(p) => p.color || "#C8102E"};
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(200, 16, 46, 0.15);
   }
 `;
