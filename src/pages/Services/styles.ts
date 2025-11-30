@@ -3,22 +3,6 @@ import styled from "styled-components";
 export const ServicesSection = styled("div")`
   min-height: 100vh;
   position: relative;
-
-  &::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-image: url('/img/kabl.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: blur(10px);
-    transform: scale(1.1);
-    z-index: -1;
-  }
 `;
 
 export const HeroSection = styled("section")`
@@ -121,15 +105,15 @@ export const SectionDescription = styled("p")`
 export const ServicesGrid = styled("div")`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2.5rem;
+  gap: 1.5rem;
   margin-top: 3rem;
-  max-width: 900px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 600px) {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 `;
 
@@ -160,4 +144,37 @@ export const CardDescription = styled("p")`
   font-size: 15px;
   line-height: 1.7;
   margin: 0;
+`;
+
+export const ServicesList = styled("ul")`
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+`;
+
+export const ServiceItem = styled("li")`
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: left;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #495057;
+
+  &::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #C8102E;
+    font-weight: bold;
+  }
+
+  strong {
+    color: #C8102E;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;

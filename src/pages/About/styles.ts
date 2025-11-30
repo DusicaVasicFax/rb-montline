@@ -3,39 +3,6 @@ import styled from "styled-components";
 export const AboutSection = styled("div")`
   min-height: 100vh;
   position: relative;
-
-  &::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-image: url('/img/kabl.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: blur(10px);
-    transform: scale(1.1);
-    z-index: -1;
-  }
-`;
-
-export const HeroSection = styled("section")`
-  position: relative;
-  padding: 8rem 0 6rem;
-  margin-top: -100px;
-  padding-top: calc(8rem + 100px);
-  color: #ffffff;
-  text-align: center;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-
-  @media only screen and (max-width: 768px) {
-    padding: 5rem 0 3rem;
-    padding-top: calc(5rem + 100px);
-  }
 `;
 
 export const ContentSection = styled("section")<{ $variant?: 'first' | 'second' | 'third' }>`
@@ -94,42 +61,23 @@ export const ContentSection = styled("section")<{ $variant?: 'first' | 'second' 
   }
 `;
 
-export const SectionTitle = styled("h1")`
-  color: #ffffff !important;
-  margin-bottom: 1.5rem;
-  font-size: 56px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-
-  @media only screen and (max-width: 768px) {
-    font-size: 40px;
-  }
-`;
-
-export const SectionDescription = styled("p")`
-  color: rgba(255, 255, 255, 0.95) !important;
-  font-size: 20px;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.7;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-
-  @media only screen and (max-width: 768px) {
-    font-size: 17px;
-  }
-`;
-
 export const InfoGrid = styled("div")`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
   margin-top: 3rem;
-  max-width: 900px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media only screen and (max-width: 600px) {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 `;
 
@@ -160,4 +108,37 @@ export const CardDescription = styled("p")`
   font-size: 15px;
   line-height: 1.7;
   margin: 0;
+`;
+
+export const ValuesList = styled("ul")`
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+`;
+
+export const ValueItem = styled("li")`
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #495057;
+
+  &::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #C8102E;
+    font-weight: bold;
+  }
+
+  strong {
+    color: #C8102E;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;

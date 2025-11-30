@@ -2,18 +2,16 @@ import { lazy } from "react";
 import { withTranslation, TFunction } from "react-i18next";
 import {
   ServicesSection,
-  HeroSection,
   ContentSection,
-  SectionTitle,
-  SectionDescription,
+  ServicesList,
+  ServiceItem,
   ServicesGrid,
   ServiceCard,
-  CardTitle,
   CardDescription,
 } from "./styles";
 
-const Container = lazy(() => import("../../common/Container"));
 const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
+const Hero = lazy(() => import("../../components/Hero"));
 
 interface ServicesProps {
   t: TFunction;
@@ -23,42 +21,38 @@ const Services = ({ t }: ServicesProps) => {
   return (
     <ServicesSection>
       <ScrollToTop />
-
-      <HeroSection>
-        <Container>
-          <SectionTitle>{t("Services")}</SectionTitle>
-          <SectionDescription>
-            {t("Professional solutions tailored to meet your business needs")}
-          </SectionDescription>
-        </Container>
-      </HeroSection>
+      <Hero
+        title="Complete optical network construction services"
+        content="From site preparation to final installation — we deliver solutions that last."
+        id="services-hero"
+      />
 
       <ContentSection $variant="first">
         <h2>{t("What We Offer")}</h2>
+        <p>
+          {t("Services What We Offer Intro")}
+        </p>
         <ServicesGrid>
           <ServiceCard>
-            <CardTitle>{t("Quality")}</CardTitle>
-            <CardDescription>
-              {t("We maintain the highest standards in all our services and products.")}
-            </CardDescription>
+            <CardDescription>{t("Services Item 1")}</CardDescription>
           </ServiceCard>
           <ServiceCard>
-            <CardTitle>{t("Experience")}</CardTitle>
-            <CardDescription>
-              {t("Years of expertise in delivering professional solutions to our clients.")}
-            </CardDescription>
+            <CardDescription>{t("Services Item 2")}</CardDescription>
           </ServiceCard>
           <ServiceCard>
-            <CardTitle>{t("Innovation")}</CardTitle>
-            <CardDescription>
-              {t("We constantly evolve and adapt to bring you the latest technologies.")}
-            </CardDescription>
+            <CardDescription>{t("Services Item 3")}</CardDescription>
           </ServiceCard>
           <ServiceCard>
-            <CardTitle>{t("Support")}</CardTitle>
-            <CardDescription>
-              {t("Dedicated customer support available to assist you at every step.")}
-            </CardDescription>
+            <CardDescription>{t("Services Item 4")}</CardDescription>
+          </ServiceCard>
+          <ServiceCard>
+            <CardDescription>{t("Services Item 5")}</CardDescription>
+          </ServiceCard>
+          <ServiceCard>
+            <CardDescription>{t("Services Item 6")}</CardDescription>
+          </ServiceCard>
+          <ServiceCard>
+            <CardDescription>{t("Services Item 7")}</CardDescription>
           </ServiceCard>
         </ServicesGrid>
       </ContentSection>
@@ -66,7 +60,21 @@ const Services = ({ t }: ServicesProps) => {
       <ContentSection $variant="second">
         <h2>{t("Why Choose Us")}</h2>
         <p>
-          {t("We believe in transparency, integrity, and building long-term relationships with our clients. Our team is committed to excellence and continuous improvement.")}
+          {t("Services Why Choose Us Intro")}
+        </p>
+        <p>
+          {t("Services Why Choose Us Subtitle")}
+        </p>
+        <ServicesList>
+          <ServiceItem><strong>{t("Reliability")}</strong> — {t("Services Why Item 1")}</ServiceItem>
+          <ServiceItem><strong>{t("Experience")}</strong> — {t("Services Why Item 2")}</ServiceItem>
+          <ServiceItem><strong>{t("Expertise")}</strong> — {t("Services Why Item 3")}</ServiceItem>
+          <ServiceItem><strong>{t("Quality")}</strong> — {t("Services Why Item 4")}</ServiceItem>
+          <ServiceItem><strong>{t("Transparency")}</strong> — {t("Services Why Item 5")}</ServiceItem>
+          <ServiceItem><strong>{t("Flexibility")}</strong> — {t("Services Why Item 6")}</ServiceItem>
+        </ServicesList>
+        <p>
+          {t("Services Why Choose Us Outro")}
         </p>
       </ContentSection>
     </ServicesSection>
